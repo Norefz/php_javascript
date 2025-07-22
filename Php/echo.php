@@ -6,4 +6,5 @@ $alias = "Erlan";
 echo "<h2>Hello my name is $name  <p>I born $date</p>  you can call me $alias</h>";
 
 
+
 ?>
