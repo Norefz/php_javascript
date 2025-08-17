@@ -40,7 +40,17 @@ if ($result ->num_rows >0) {
   
 }
 else {
-        echo "<script>alert('passowrd or username is wrong.')</script>";
+  $log_message = sprintf(
+    "failed login attempt User. Username'%s' , IPAddress:'%s', Time:'%s'",
+    $username,
+    $_SERVER['REMOTE_ADDR'],
+        $_SERVER['HTTP_USER_AGENT'] ?? 'Unknown', // Use null coalescing for safety
+        date('Y-m-d H:i:s')
+  );
+  error_log($log_message . PHP_EOL,3,'/home/erlan/Documents/Github/php_javascript/Php/login/login_erros.log');
+ $_SESSION['login_error']="invalid user / password";
+  header("Location:formlogin.php");
+   exit();
 }
 }
 
