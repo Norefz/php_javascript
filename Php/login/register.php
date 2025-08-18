@@ -38,10 +38,21 @@ if (isset($_POST['submit'])) {
    $sql = "SELECT * FROM login where username='$username'";
    $result = mysqli_query($conn,$sql);
 
-  if ($result->num_rows == 0) {
+   if ($result->num_rows == 0) {
+     $image_path='';
+     if (isset ($_FILES["fileToUpload"]) && $_FILES["fileToUpload"]["error"] == 0) {
+       $target_file = $target_dir , basename($_FILES["fileToUpload"] ["name"])
+     }
+     // move to lokal computer imager
+         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"]. $target_file)) {
+        $image_path = $target_file
+         }  else{
+                echo "<script>alert('Sorry there was an errror uploading file!')</script>";
+         }
     $sql ="INSERT INTO login (username,password)
       VALUES ('$username','$password')";
     $result = mysqli_query($conn,$sql);
+
     if ($result) {
                 echo "<script>alert('Selamat, pendaftaran berhasil!')</script>";
                 $username = "";
