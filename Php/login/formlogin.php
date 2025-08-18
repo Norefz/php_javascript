@@ -40,7 +40,8 @@ if ($result ->num_rows >0) {
   
 }
 else {
-  $log_message = sprintf(
+  // Print error message to log so i can see it
+ $log_message = sprintf(
     "failed login attempt User. Username'%s' , IPAddress:'%s', Time:'%s'",
     $username,
     $_SERVER['REMOTE_ADDR'],
@@ -48,11 +49,29 @@ else {
         date('Y-m-d H:i:s')
   );
   error_log($log_message . PHP_EOL,3,'/home/erlan/Documents/Github/php_javascript/Php/login/login_erros.log');
- $_SESSION['login_error']="invalid user / password";
-  header("Location:formlogin.php");
-   exit();
+  $_SESSION['login_error']="invalid user / password";
+
+   
+//Error Alert
+echo "<script>alert('Ups, Username or password Not FOund')</script>";
+ }
+
 }
-}
+// else {
+//
+//   $log_message = sprintf(
+//     "failed login attempt User. Username'%s' , IPAddress:'%s', Time:'%s'",
+//     $username,
+//     $_SERVER['REMOTE_ADDR'],
+//         $_SERVER['HTTP_USER_AGENT'] ?? 'Unknown', // Use null coalescing for safety
+//         date('Y-m-d H:i:s')
+//   );
+//   error_log($log_message . PHP_EOL,3,'/home/erlan/Documents/Github/php_javascript/Php/login/login_erros.log');
+//  $_SESSION['login_error']="invalid user / password";
+//   header("Location:formlogin.php");
+//    exit();
+// }
+
 
 
 
