@@ -11,3 +11,5 @@ failed login attempt User. Username'ww' , IPAddress:'::1', Time:'Mozilla/5.0 (X1
 failed login attempt User. Username'ww' , IPAddress:'::1', Time:'Mozilla/5.0 (X11; Linux x86_64; rv:135.0) Gecko/20100101 Firefox/135.0'
 failed login attempt User. Username'ww' , IPAddress:'::1', Time:'Mozilla/5.0 (X11; Linux x86_64; rv:135.0) Gecko/20100101 Firefox/135.0'
 failed login attempt User. Username'sss' , IPAddress:'::1', Time:'Mozilla/5.0 (X11; Linux x86_64; rv:135.0) Gecko/20100101 Firefox/135.0'
+failed login attempt User. Username'' , IPAddress:'::1', Time:'Mozilla/5.0 (X11; Linux x86_64; rv:135.0) Gecko/20100101 Firefox/135.0'
+failed login attempt User. Username'' , IPAddress:'::1', Time:'Mozilla/5.0 (X11; Linux x86_64; rv:135.0) Gecko/20100101 Firefox/135.0'

@@ -1,10 +1,22 @@
 <?php
 session_start();
-
+include('conect.php');
 if (!isset($_SESSION['username'])) {
     header("Location: formlogin.php");
     exit();
 }
+
+$username = $_SESSION['username'];
+
+// Ambil data user dari database
+$sql = "SELECT image FROM login WHERE username = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("s", $username);
+$stmt->execute();
+$result = $stmt->get_result();
+$user = $result->fetch_assoc();
+
+$image_path = !empty($user['image']) ? $user['image'] : "uploads/default.png";
 ?>
 
 <!DOCTYPE html>
@@ -18,6 +30,12 @@ if (!isset($_SESSION['username'])) {
 <body class="min-vh-100 d-flex flex-column justify-content-center align-items-center bg-dark text-white">
 
     <div class="text-center">
+  <img src="<?php echo htmlspecialchars($image_path); ?>" 
+         alt="Profile Picture" 
+         class="rounded-circle mb-4"
+         style="width: 150px; height: 150px; object-fit: cover; border:2px solid;">
+
+    <br>
         <h1 class="display-4 mb-4">Welcome Back,<strong class= "text-primary"> <?php echo ($_SESSION['username']); ?> </strong>!</h1>
 
         <a href="logout.php" class="btn btn-danger btn-lg">Logout</a>

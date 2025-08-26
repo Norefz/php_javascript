@@ -90,7 +90,7 @@ echo "<script>alert('Ups, Username or password Not FOund')</script>";
 </div>
 
 <button name="submit" class="btn btn-primary ms-1" style="width:27rem;">LOGIN</button>
-<a class="text-primary  text-center" href=" register.php">Register</a>
+<a class="text-primary  text-center" href="regis.php">Register</a>
 </form>
  </div>
       </body>
