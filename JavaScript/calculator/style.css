@@ -1,7 +1,13 @@
-body{
-  background-color:violet;
-  display :flex;
+body {
+  background-color: violet;
+  display: flex;
   justify-content: center;
-  align-items:center;
+  align-items: center;
   height: 100vh;
+}
+
+#keys {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+
 }
