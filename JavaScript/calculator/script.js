@@ -5,6 +5,11 @@ function CalcDisplay(input) {
 function ClearDisplay (input) {
   display.value ="";
 }
-function name(params) {
-  
+function Calculate() {
+  try {
+  display.value = eval(display.value);
+  } catch (error) {
+    display.value= "Error";
+    
+  }
 }
