@@ -1,1 +1,1 @@
-var pokemon;
+const pokemo
