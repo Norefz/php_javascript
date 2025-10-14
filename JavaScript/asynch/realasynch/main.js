@@ -49,3 +49,19 @@ async function Result() {
   }
 }
 Result();
+// with promise All
+async function betterResult(){
+  try  {
+     const[humanResult,petResult,carResult] = await Promise.all ([
+    human(),
+    pet(),
+  car(),
+    ] );
+    console.log(humanResult);
+    console.log(petResult);
+    console.log(carResult);
+  } catch (error) {
+    
+  }
+}
+betterResult();
