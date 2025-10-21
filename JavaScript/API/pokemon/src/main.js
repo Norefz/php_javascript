@@ -18,7 +18,15 @@ async function FetchData() {
       let data = await response.json();
       console.log(data.sprites);
       let name = await data.name;
+      let id = await data.id;
+      const img = await data.sprites.front_default;
       document.getElementById("name").innerHTML = name;
+      document.getElementById("id").innerHTML = id;
+      document.getElementById("pokemonimg").src = img;
+       
+      // const imgElement=  document.getElementById("pokemonimg");
+      // imgElement.src= img;
+      // imgElement.style.display = "block";
     } catch (error) {
        console.error(error);
     }
