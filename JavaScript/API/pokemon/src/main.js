@@ -10,18 +10,16 @@
  
 async function FetchData() {
     try {
-      const response = await fetch("https://pokeapi.co/api/v2/pokemon/pikachu");
+      const pokemonName = document.getElementById("pokemonname").value.toLowerCase();
+      const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
       if (!response.ok) {
          throw new Error("could not Fetch the resource");
       }
       let data = await response.json();
       console.log(data.sprites);
       let name = await data.name;
-      let img = await  data.sprites;
       document.getElementById("name").innerHTML = name;
-      document.getElementById("img").innerHTML = img;
     } catch (error) {
        console.error(error);
     }
 }
-FetchData();
