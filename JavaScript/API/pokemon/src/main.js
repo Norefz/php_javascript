@@ -13,7 +13,7 @@ async function FetchData() {
       const pokemonName = document.getElementById("pokemonname").value.toLowerCase();
       const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
       if (!response.ok) {
-         throw new Error("could not Fetch the resource");
+         throw new Error("Pokemon Not Found");
       }
       let data = await response.json();
       console.log(data.sprites);
@@ -31,5 +31,6 @@ async function FetchData() {
       // imgElement.style.display = "block";
     } catch (error) {
        console.error(error);
+       document.getElementById("id").innerHTML = error
     }
 }
