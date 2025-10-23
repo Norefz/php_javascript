@@ -20,9 +20,11 @@ async function FetchData() {
       let name = await data.name;
       let id = await data.id;
       const img = await data.sprites.front_default;
-      document.getElementById("name").innerHTML = name;
+      document.getElementById(" name").innerHTML = name;
       document.getElementById("id").innerHTML = id;
       document.getElementById("pokemonimg").src = img;
+      document.getElementById("pokemonimg").classList.remove("hidden");
+      
        
       // const imgElement=  document.getElementById("pokemonimg");
       // imgElement.src= img;
