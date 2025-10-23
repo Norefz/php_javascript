@@ -11,8 +11,15 @@
 async function FetchData() {
     try {
       const pokemonName = document.getElementById("pokemonname").value.toLowerCase();
+      const errorMsg= document.getElementById("error");
+      // clear output after search
+    // errMsg.innerHTML="Loading..."
+       // errMsg.innerHTML = "";
+
+     //the API
       const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
       if (!response.ok) {
+         // actually coulnt not fetch data but i made  like this because lazy haha
          throw new Error("Pokemon Not Found");
       }
       let data = await response.json();
@@ -29,8 +36,14 @@ async function FetchData() {
       // const imgElement=  document.getElementById("pokemonimg");
       // imgElement.src= img;
       // imgElement.style.display = "block";
+    pokemonName.value = "";
+    errorMsg.innerHTML = "";
     } catch (error) {
        console.error(error);
-       document.getElementById("id").innerHTML = error
+       // errMsg = error;
+      const errorMsg = document.getElementById("error");
+    errorMsg.innerHTML = error.message;
     }
 }
+
+
