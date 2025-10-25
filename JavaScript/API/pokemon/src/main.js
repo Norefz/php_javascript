@@ -23,14 +23,18 @@ async function FetchData() {
          throw new Error("Pokemon Not Found");
       }
       let data = await response.json();
-      console.log(data.sprites);
+      // console.log(data)
+      // console.log(data.sprites);
+    // API DATA
       let name = await data.name;
       let id = await data.id;
       const img = await data.sprites.front_default;
-      document.getElementById(" name").innerHTML = name;
-      document.getElementById("id").innerHTML = id;
+      const height = data.height;
+      document.getElementById("name").innerHTML ="Name:"+name;
+      document.getElementById("height").innerHTML ="Weight:"+height;
       document.getElementById("pokemonimg").src = img;
       document.getElementById("pokemonimg").classList.remove("hidden");
+    
       
        
       // const imgElement=  document.getElementById("pokemonimg");
