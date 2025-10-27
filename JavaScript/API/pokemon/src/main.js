@@ -11,8 +11,10 @@
 async function FetchData() {
     try {
       const pokemonName = document.getElementById("pokemonname").value.toLowerCase();
+      const clearValue = document.getElementById("pokemonname");
       const errorMsg= document.getElementById("error");
       // clear output after search
+    clearValue.value = "";
     // errMsg.innerHTML="Loading..."
        // errMsg.innerHTML = "";
 
@@ -40,7 +42,6 @@ async function FetchData() {
       // const imgElement=  document.getElementById("pokemonimg");
       // imgElement.src= img;
       // imgElement.style.display = "block";
-    pokemonName.value = "";
     errorMsg.innerHTML = "";
     } catch (error) {
        console.error(error);
