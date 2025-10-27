@@ -36,9 +36,6 @@ async function FetchData() {
       document.getElementById("height").innerHTML ="Weight:"+height;
       document.getElementById("pokemonimg").src = img;
       document.getElementById("pokemonimg").classList.remove("hidden");
-    
-      
-       
       // const imgElement=  document.getElementById("pokemonimg");
       // imgElement.src= img;
       // imgElement.style.display = "block";
@@ -48,6 +45,10 @@ async function FetchData() {
        // errMsg = error;
       const errorMsg = document.getElementById("error");
     errorMsg.innerHTML = error.message;
+     // remove display when errro occured
+      document.getElementById("name").classList.add("hidden");
+      document.getElementById("height").classList.add("hidden");
+      document.getElementById("pokemonimg").classList.add("hidden");
     }
 }
 //Key Element 
