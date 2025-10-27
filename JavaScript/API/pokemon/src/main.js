@@ -49,5 +49,14 @@ async function FetchData() {
     errorMsg.innerHTML = error.message;
     }
 }
+//Key Element 
+ const input = document.getElementById("pokemonname");
+//add listener so when key is pressed it call FetchData function
+input.addEventListener("keypress",function(event){
+if (event.key == "Enter") {
+ FetchData();
+ event.preventDefault();
+}
+});
 
 
