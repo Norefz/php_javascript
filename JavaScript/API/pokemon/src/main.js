@@ -35,6 +35,9 @@ async function FetchData() {
       document.getElementById("name").innerHTML ="Name:"+name;
       document.getElementById("height").innerHTML ="Weight:"+height;
       document.getElementById("pokemonimg").src = img;
+    // remove when immage appear
+      document.getElementById("name").classList.remove("hidden");
+      document.getElementById("height").classList.remove("hidden");
       document.getElementById("pokemonimg").classList.remove("hidden");
       // const imgElement=  document.getElementById("pokemonimg");
       // imgElement.src= img;
