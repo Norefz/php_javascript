@@ -54,6 +54,15 @@ async function FetchData() {
       document.getElementById("pokemonimg").classList.add("hidden");
     }
 }
+async function Weather(){
+  const lat= 7;
+  const lon= 8;
+  const myApi = "0400a1695cd6cd7c97eb1b034bf01012"
+  const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${myApi}`);
+  const data = await response.json();
+  console.log(data);
+}
+Weather();
 //Key Element 
  const input = document.getElementById("pokemonname");
 //add listener so when key is pressed it call FetchData function
