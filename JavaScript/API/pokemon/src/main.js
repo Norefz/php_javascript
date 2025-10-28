@@ -62,8 +62,10 @@ async function Weather(){
   const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${myApi}`);
   const data = await response.json();
   console.log(data);
-  const weather = document.getElementById("weather");
-  weather = data;
+  const temp = Math.round(data.main.temp);
+  const desc = data.weather[0].description;
+  const iconCode = data.weather[0].icon;
+  const weather = document.getElementById("weather").innerHTML= `${city} ${temp}°C ${iconCode} ${desc} `;
   
 }
 Weather();
