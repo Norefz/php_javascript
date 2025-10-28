@@ -57,10 +57,14 @@ async function FetchData() {
 async function Weather(){
   const lat= 7;
   const lon= 8;
+  const  city =  "Salatiga";
   const myApi = "0400a1695cd6cd7c97eb1b034bf01012"
-  const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${myApi}`);
+  const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${myApi}`);
   const data = await response.json();
   console.log(data);
+  const weather = document.getElementById("weather");
+  weather = data;
+  
 }
 Weather();
 //Key Element 
@@ -72,5 +76,4 @@ if (event.key == "Enter") {
  event.preventDefault();
 }
 });
-
 
