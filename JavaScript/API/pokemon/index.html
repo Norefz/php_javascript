@@ -9,32 +9,39 @@
   <title>pokemon</title>
 </head>
 
-<body class="bg-gradient-to-br relative from-indigo-900 font-mono flex justify-center items-center h-screen ">
-  <div id="weather"
-    class="absolute top-5 left-5 bg-white/20 backdrop-blur-md text-white px-4 py-2 rounded-md shadow-lg">
-    Weather
-    <img src="" id="icon" alt="" style="width: 80px; hidden">
-  </div>
-  <div class="  text-center  bg-purple-50 size-150 rounded-md   ">
-    <h1 class="font-mono text-3xl mt-35">Search Pokemon</h1>
-    <br>
-    <input type="" name="" id="pokemonname" value="" class="border-1 text-center  rounded-md px-9 border-b-black">
-    <br>
-    <button class=" cursor-pointer   bg-blue-400 text-white px-20 mt-3 text-center rounded-sm" type=""
-      onclick="FetchData()">Search</button>
-    <br>
-    <br>
-    <div class=" flex justify-center bg-blue-50  items-center size-70  mx-auto">
-      <img class=" size-65 hidden" src="" id="pokemonimg" alt="">
-      <div class="flex flex-col items-start">
-        <p class="relative right-15" id="name"></p>
-        <p class=" relative right-15" id="height"></p>
-      </div>
-      <p class="text-red-600" id="error"></p>
-    </div>
 
+<body
+  class="bg-gradient-to-br from-indigo-900 font-mono min-h-screen flex flex-col items-center justify-center relative p-4">
+
+  <div id="weather"
+    class="absolute top-4 left-4 bg-white/20 backdrop-blur-md text-white px-4 py-3 rounded-xl shadow-lg text-center w-36 sm:w-44">
+    <p id="city" class="font-semibold text-lg">Salatiga</p>
+    <img src="" id="icon" alt="weather icon" class="mx-auto w-12 hidden" />
+    <p id="temp" class="text-2xl font-bold mt-1">24°C</p>
+    <p id="desc" class="text-sm opacity-80">Moderate Rain</p>
   </div>
+  <div class="text-center bg-purple-50 rounded-2xl p-6 w-full max-w-md shadow-lg mt-20 sm:mt-0">
+    <h1 class="text-2xl font-bold mb-4">Search Pokemon</h1>
+
+    <input id="pokemonname" type="text"
+      class="border border-gray-400 text-center rounded-md px-4 py-2 w-4/5 max-w-xs focus:outline-none"
+      placeholder="Enter Pokemon name">
+
+    <button onclick="FetchData()"
+      class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-6 py-2 rounded-md mt-3">
+      Search
+    </button>
+
+    <div class="flex flex-col items-center bg-blue-50 rounded-md mt-5 p-4">
+      <img id="pokemonimg" src="" alt="" class="w-32 hidden" />
+      <p id="name" class="text-lg font-medium mt-2"></p>
+      <p id="height" class="text-gray-700"></p>
+      <p id="error" class="text-red-600 mt-2"></p>
+    </div>
+  </div>
+
   <script type="module" src="/src/main.js"></script>
 </body>
+
 
 </html>
