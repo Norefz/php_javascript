@@ -12,14 +12,23 @@
 <body
   class="bg-gradient-to-br relative from-indigo-900 font-mono flex justify-center items-center h-screen overflow-x-hidden overflow-y-hidden ">
   <div id="weather"
-    class="absolute top-1 left-5 bg-white/20 backdrop-blur-md text-white text-center rounded-2xl shadow-xl p-4 w-40   sm:w-18 sm:h-18 md:w-26 transition-all duration-300">
-    <h2 id="city" class="text-lg sm:text-xl font-semibold">Salatiga</h2>
+    class="absolute top-5 left-5 flex sm:flex-row flex-col items-center sm:items-center gap-2 sm:gap-4 bg-white/20 backdrop-blur-md text-white rounded-2xl shadow-xl p-4 w-[150px] sm:w-[280px] transition-all duration-300">
+    <!-- Weather Icon -->
     <img id="icon" src="https://openweathermap.org/img/wn/10d@2x.png" alt="Weather Icon"
-      class="mx-auto w-10 sm:w-12 md:w-14" />
-    <p id="temp" class="text-2xl sm:text-3xl md:text-4xl font-bold mt-2">24°C</p>
-    <p id="desc" class="text-sm sm:text-base md:text-lg opacity-80">
-      Moderate Rain
-    </p>
+      class="w-[50px] sm:w-[70px] mb-1 sm:mb-0" />
+
+    <!-- Weather Info -->
+    <div class="flex flex-col items-center sm:items-start text-center sm:text-left">
+      <h2 id="city" class="text-base sm:text-lg font-semibold">
+        Salatiga
+      </h2>
+      <p id="temp" class="text-lg sm:text-2xl font-bold leading-tight">
+        24°C
+      </p>
+      <p id="desc" class="text-xs sm:text-sm opacity-80">
+        Moderate Rain
+      </p>
+    </div>
   </div>
   <div class="  text-center  bg-purple-50 size-150 rounded-md   ">
     <h1 class="font-mono text-3xl mt-35">Search Pokemon</h1>
