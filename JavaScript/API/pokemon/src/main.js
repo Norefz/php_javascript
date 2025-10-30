@@ -28,9 +28,9 @@ async function FetchData() {
       // console.log(data)
       // console.log(data.sprites);
     // API DATA
-      let name = await data.name;
-      let id = await data.id;
-      const img = await data.sprites.front_default;
+      let name = data.name;
+      let id =  data.id;
+      const img = data.sprites.front_default;
       const height = data.height;
       document.getElementById("name").innerHTML ="Name:"+name;
       document.getElementById("height").innerHTML ="Weight:"+height;
@@ -98,6 +98,9 @@ async function Weather() {
   });
 }
 Weather();
+document.getElementById("btn").addEventListener('click', () => {
+FetchData();
+});
 //Key Element 
  const input = document.getElementById("pokemonname");
 //add listener so when key is pressed it call FetchData function
@@ -107,4 +110,5 @@ if (event.key == "Enter") {
  event.preventDefault();
 }
 });
+
 
